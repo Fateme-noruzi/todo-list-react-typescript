@@ -75,7 +75,7 @@ export function addInputValue(item: Item) {
     }
 }
 
-export function resestSelectedItem() {
+export function resetSelectedItem() {
     const action = {
         type: actionTypes.RESET_SELECT_ITEM,
 

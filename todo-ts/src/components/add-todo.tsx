@@ -3,7 +3,7 @@ import * as React from 'react';
 import Item from '../models/Item';
 import { Dispatch } from 'redux';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { addItem, editItem, resestSelectedItem } from '../redux/todo/actions';
+import { addItem, editItem, resetSelectedItem } from '../redux/todo/actions';
 import { TodoState } from '../models/type-todo';
 
 
@@ -21,7 +21,7 @@ export const AddTodo: React.FC = () => {
     )
 
     const cancelEdit = React.useCallback(() => {
-        dispatch(resestSelectedItem());
+        dispatch(resetSelectedItem());
         setTitle('');
     }, [dispatch])
 

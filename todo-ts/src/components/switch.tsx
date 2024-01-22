@@ -5,7 +5,7 @@ import { Dispatch } from 'redux'
 
 type Prop = { enabled: boolean, setEnabled: () => void }
 
-const SwitchInput: React.FC<Prop> = ({ enabled, setEnabled }) => {
+export const SwitchInput: React.FC<Prop> = ({ enabled, setEnabled }) => {
     const dispatch: Dispatch<any> = useDispatch()
 
     const changeFilter = React.useCallback(
@@ -33,5 +33,3 @@ const SwitchInput: React.FC<Prop> = ({ enabled, setEnabled }) => {
         </div>
     )
 }
-
-export default SwitchInput

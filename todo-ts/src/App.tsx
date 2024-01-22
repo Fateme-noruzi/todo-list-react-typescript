@@ -1,13 +1,10 @@
 import React from 'react';
 import './App.css';
-import TodoList from './components/TodoList';
 import { shallowEqual, useSelector } from 'react-redux';
 import { TodoState } from './models/type-todo';
 import { toggleFilter } from './redux/todo/actions';
-import { AddTodo } from './components/AddTodo';
-import SwitchInput from './components/swithc';
-import 'devextreme/dist/css/dx.light.css';
 import Item from './models/Item';
+import { AddTodo, TodoList, SwitchInput } from './components';
 const App: React.FC = () => {
 
   const enabledFilter: boolean = useSelector(

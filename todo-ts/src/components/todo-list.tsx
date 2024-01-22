@@ -6,7 +6,7 @@ import { TodoState } from "../models/type-todo";
 import { Todo } from "./todo";
 import Item from '../models/Item';
 
-const TodoList = () => {
+export const TodoList = () => {
     const [resultList, setResultList] = useState<Item[]>([])
     const dispatch: Dispatch<any> = useDispatch()
 
@@ -57,5 +57,3 @@ const TodoList = () => {
         </>
     );
 };
-
-export default TodoList;
