@@ -50,13 +50,8 @@ export const AddTodo: React.FC = () => {
 
     return (
         <form onSubmit={addNewItem} className="Add-Item">
-            {/* in edit state this button is show to can exit from this state */}
-            {selectedItem.title && <div className="flex flex-row-reverse mt-4">
-                <button className="btn-outLine btn-alert" accessKey='c' onClick={cancelEdit}>
-                    Cancel
-                </button>
-            </div>}
-            <div className="flex mt-4">
+
+            <div className="flex mt-4 max-[500px]:flex-col">
                 <input
                     type="text"
                     id="title"
@@ -67,10 +62,22 @@ export const AddTodo: React.FC = () => {
                     className='input'
                 />
 
-                <button className={`btn-outLine  ${title === '' ? 'btn-disabled' : 'btn-default'}`} disabled={title === '' ? true : false}>
-                    Save
-                </button>
+                <div className="group flex relative">
+
+                    <button className={`btn-outLine  ${title === '' ? 'btn-disabled' : 'btn-default'} peer`} disabled={title === '' ? true : false}>
+                        Save
+                    </button>
+                    {/* in edit state this button is show to can exit from this state */}
+                    {selectedItem.title &&
+                        < button className="btn-outLine btn-alert" accessKey='c' onClick={cancelEdit}>
+                            Cancel
+                        </button>
+                    }
+                    {title == '' && <span className="tooltipbox" style={{ width: 'max-content' }}><p>Start typeing in Input</p></span>}
+                </div>
+
             </div>
-        </form>
+
+        </form >
     );
 };

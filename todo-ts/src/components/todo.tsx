@@ -25,14 +25,17 @@ export const Todo: React.FC<Props> = ({ item, index, handleSort, dragItem, dragg
 
         <div draggable onDragStart={() => (dragItem.current = index)} onDragEnter={() => (draggedOverItem.current = index)} onDragEnd={handleSort}
             onDragOver={(e) => e.preventDefault}>
-            <div className="flex mb-4 my-4 items-center hover:bg-gray-100 ">
+            <div className="todo-box">
+                <div className="flex my-2">
+                    <input type="checkbox" id={item.id?.toString()} value={item.id} checked={item.completed} onClick={() => checkedItem(item)} className='ml-4 mr-2 ' />
+                    <p className={`w-full text-grey-darkest ${item.completed && 'line-through'}`}>{item.title}</p>
+                </div>
 
-                <input type="checkbox" id={item.id?.toString()} value={item.id} checked={item.completed} onClick={() => checkedItem(item)} className='ml-4 mr-2 ' />
-                <p className={`w-full text-grey-darkest ${item.completed && 'line-through'}`}>{item.title}</p>
+                <div className='flex flex-row-reverse'>
 
-
-                <button onClick={() => deleteItem(item)} className="btn-outLine btn-default">Delete</button>
-                <button onClick={() => updateValue(item)} className="btn-outLine btn-alert">Edit</button>
+                    <button onClick={() => deleteItem(item)} className="btn-outLine btn-default">Delete</button>
+                    <button onClick={() => updateValue(item)} className="btn-outLine btn-alert">Edit</button>
+                </div>
 
             </div>
         </div>

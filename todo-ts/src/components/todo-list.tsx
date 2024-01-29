@@ -52,7 +52,7 @@ export const TodoList = () => {
                         dragItem={dragItem}
                         draggedOverItem={draggedOverItem}
                     />
-                )) : <div className="flex justify-center mt-4"><h1>Insert Your First ToDo :D</h1></div>
+                )) : <div className="flex justify-center mt-4"><img src={require('../images/nodata.png')} alt="no-Data" /></div>
             }
         </>
     );

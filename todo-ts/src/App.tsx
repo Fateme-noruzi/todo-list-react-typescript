@@ -20,11 +20,11 @@ const App: React.FC = () => {
   return (
     <main>
       <div className="div-main dx-viewport" >
-        <div className="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+        <div className="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg align-middle">
           <div className="mb-4">
-            <h1 className="text-grey-darkest">Todo List</h1>
+            <h1 className="text-grey-darkest text-center text-2xl">TODO LIST</h1>
             <AddTodo />
-            {!!items.length && <div className="mt-4">
+            {!!items.length && <div className="mt-8">
               <SwitchInput enabled={enabledFilter} setEnabled={toggleFilter} />
             </div>}
             <TodoList />
