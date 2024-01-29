@@ -73,7 +73,7 @@ export const AddTodo: React.FC = () => {
                             Cancel
                         </button>
                     }
-                    {title == '' && <span className="tooltipbox" style={{ width: 'max-content' }}><p>Start typeing in Input</p></span>}
+                    {title == '' && <span className="tooltipbox" style={{ width: 'max-content' }}><p>Start typing in the input.</p></span>}
                 </div>
 
             </div>
